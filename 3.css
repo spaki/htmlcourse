@@ -1,0 +1,68 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial,sans-serif;
+    color: rgb(124, 4, 4);
+}
+
+h1 {
+    margin: 0;
+    padding-top: 140px;
+}
+
+header {
+    text-align: center;
+    height: 300px;
+    width: 100%;
+    background-image: url(https://s10.postimg.org/6ac361xk9/6021125-pretty-summer-flower-wallpaper.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.flex-item {
+    width: 300px;
+    margin: 20px;
+}
+
+.flex-item img {
+    max-width: 300px;
+}
+
+footer {
+    background-color: palegoldenrod;
+    height: 60px;
+}
+
+footer ul {
+    text-align: center;
+    /* top right bottom  left */
+    margin: 0;
+    padding: 20px 0 0 0;
+}
+
+footer li {
+    display: inline;
+    padding: 20px;
+}
+
+a {
+    color: green; 
+    text-decoration: none;
+    transition: color 1s;
+}
+
+a:visited {
+    color: green; 
+}
+
+a:hover {
+    color: limegreen; 
+}
