@@ -1,0 +1,10 @@
+C:\git\htmlcourse\api\mail\bin\Debug\netcoreapp2.0\mail.deps.json
+C:\git\htmlcourse\api\mail\bin\Debug\netcoreapp2.0\mail.runtimeconfig.json
+C:\git\htmlcourse\api\mail\bin\Debug\netcoreapp2.0\mail.runtimeconfig.dev.json
+C:\git\htmlcourse\api\mail\bin\Debug\netcoreapp2.0\mail.dll
+C:\git\htmlcourse\api\mail\bin\Debug\netcoreapp2.0\mail.pdb
+C:\git\htmlcourse\api\mail\obj\Debug\netcoreapp2.0\mail.csproj.CoreCompileInputs.cache
+C:\git\htmlcourse\api\mail\obj\Debug\netcoreapp2.0\mail.AssemblyInfoInputs.cache
+C:\git\htmlcourse\api\mail\obj\Debug\netcoreapp2.0\mail.AssemblyInfo.cs
+C:\git\htmlcourse\api\mail\obj\Debug\netcoreapp2.0\mail.dll
+C:\git\htmlcourse\api\mail\obj\Debug\netcoreapp2.0\mail.pdb
