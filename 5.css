@@ -1,0 +1,45 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    background-color: #e1e1e1;
+    color: #3d454c;
+}
+
+h1 {
+    margin: 0;
+    padding-top: 30px;
+    text-shadow: 3px 3px 1px black;
+}
+
+header {
+    text-align: center;
+    height: 100px;
+    width: 100%;
+    color: #fff;
+    background: linear-gradient(to right, #8f358b, #321532);
+}
+
+footer {
+    color: #fff;
+    background-color: #361537;
+    padding: 20px;
+    text-align: center;
+    bottom: 0;
+    position:fixed;
+    width: 100%
+}
+
+article {
+    margin: 5%
+}
+
+audio, video {
+    width: 400px;
+    /*horizontal vertical borrão tamanho color*/
+    box-shadow: 1px 10px 20px rgba(143, 53, 139, 0.5);
+}
+
+.media {
+    text-align: center;
+}
