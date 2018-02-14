@@ -11,7 +11,6 @@ namespace mail.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public string Nome { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
         public bool Notify { get; set; }
