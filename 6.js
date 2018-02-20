@@ -53,8 +53,6 @@ function listarUltimosContatos() {
         var contatos = JSON.parse(requisicao.responseText);
         var novoHtml = "";
 
-        console.log(contatos);
-
         for(var index in contatos) {
             var contato = contatos[index];
             novoHtml += "Nome: " + contato.name + "<br>";

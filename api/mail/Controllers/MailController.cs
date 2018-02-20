@@ -40,7 +40,6 @@ namespace mail.Controllers
 
             new SmtpClient("smtp.mail.com", 587)
             {
-                Credentials = new NetworkCredential(fromMail, ""),
                 EnableSsl = true
             }.Send(fromMail, entity.Email, entity.Title, entity.Body);
 

@@ -1,0 +1,167 @@
+@font-face {
+    font-family: "opensans-bold";
+    src: url("https://s3.glbimg.com/cdn/fonts/opensans/bold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "robotoslab-regular";
+    src: url("https://s3.glbimg.com/cdn/fonts/robotoslab/regular.woff2") format("woff2");
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: opensans-bold,Arial,Helvetica Neue,Helvetica,sans-serif;
+    background-color: #fff;
+}
+
+header {
+    height: 100px;
+}
+
+footer {
+    background-color: rgb(30, 104, 191);
+    color: rgb(143, 180, 223);
+    height: 45px;
+    padding-top: 25px;
+}
+
+footer span {
+    color: #fff;
+    line-height: 60%;
+    letter-spacing: -2px;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+h1 {
+    color: #0669de;
+    margin: 0;
+    padding-top: 20px;
+    line-height: 60%;
+    letter-spacing: -5px;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 56px;
+    margin: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.conteudo {
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.linha-rodape {
+    border-bottom: 1px solid #ccc;
+}
+
+.linha-direita {
+    border-right: 1px solid #ccc;
+}
+
+.noticia-vermelha, .noticia-vermelha a {
+    color: #cd150c;
+}
+
+.noticia-vermelha a:hover {
+    color: #f03018;
+}
+
+.noticia-verde, .noticia-verde a {
+    color: #359e00;
+}
+
+.noticia-verde a:hover {
+    color: #61c013;
+}
+
+.noticia-laranja, .noticia-laranja a {
+    color: #ff8100;
+}
+
+.noticia-laranja a:hover{
+    color: #ff9f00;
+}
+
+.noticia-imagem {
+    max-width: 270px;
+}
+
+.noticia-imagem-menor {
+    max-width: 160px;
+}
+
+.fundo-cinza {
+    background-color: #e1e1e1;
+}
+
+.mais-lidas {
+    color: #989898;
+    font-family: robotoslab-regular,Arial,Helvetica Neue,Helvetica,sans-serif;
+    font-size: 20px;
+}
+
+.mais-lidas span {
+    color: #333;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.noticias-mais-lidas {
+    font-size: 20px;
+    color: #666;
+    list-style-position: inside;
+}
+
+.noticias-mais-lidas li {
+    padding: 10px;
+    margin: 10px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.flex-item-385 {
+    width: 385px;
+    margin: 10px;
+    padding: 10px;
+    margin-left: 0px;
+}
+
+.flex-item-590 {
+    width: 590px;
+    margin: 10px;
+    padding: 10px;
+    margin-left: 0px;
+}
+
+.flex-item-280 {
+    width: 280px;
+    margin: 10px;
+    padding: 10px;
+    margin-left: 0px;
+}
+
+.flex-item-160 {
+    width: 160px;
+    margin: 10px;
+    padding: 10px;
+    margin-left: 0px;
+}
+
+.flex-item-full {
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+}
