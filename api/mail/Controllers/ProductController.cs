@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -33,9 +34,16 @@ namespace mail.Controllers
         }
         
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get([FromQuery]string value = null)
         {
-            var entities = this.GetCached();
+            var entities = this
+                .GetCached()
+                .Where(e => 
+                    string.IsNullOrWhiteSpace(value) 
+                    || e.Name.IndexOf(value, StringComparison.OrdinalIgnoreCase) >= 0
+                    || e.Description.IndexOf(value, StringComparison.OrdinalIgnoreCase) >= 0
+                )
+                .ToList();
 
             return this.Ok(entities);
         }

@@ -17,9 +17,11 @@ namespace mail.Controllers
         [HttpGet("{userMail}")]
         public IActionResult Get(string userMail)
         {
-            var entities = this.GetCached();
-            var result = entities.FirstOrDefault(e => e.UserMail == userMail);
-
+            var result = this
+                .GetCached()
+                .Where(e => e.UserMail == userMail)
+                .OrderByDescending(e => e.Date)
+                .ToList();
             return this.Ok(result);
         }
 

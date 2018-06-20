@@ -48,7 +48,7 @@ namespace mail.Controllers
         }
 
         [HttpPatch("disable/{userMail}")]
-        public IActionResult Disbale(string userMail)
+        public IActionResult Disable(string userMail)
         {
             var entities = this.GetCached();
             var bag = entities.FirstOrDefault(e => e.UserMail == userMail && e.IsActive);
