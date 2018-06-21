@@ -1,0 +1,14 @@
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.space-div {
+    margin: 20px;
+}

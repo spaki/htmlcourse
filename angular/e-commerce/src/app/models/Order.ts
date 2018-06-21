@@ -1,8 +1,8 @@
 export interface Order {
-  Id: string;
-  Date: Date;
-  UserMail: string;
-  BagId: string;
-  PaymentMethodId: number;
+  id: string;
+  date: Date;
+  userMail: string;
+  bagId: string;
+  paymentMethodId: number;
 }
   

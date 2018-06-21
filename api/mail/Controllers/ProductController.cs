@@ -28,24 +28,37 @@ namespace mail.Controllers
                 entities.Add(new Product { Id = 10, Name = "Liquidificador", Price = 159.99m, Description = "Liquidificador Philips Walita Problend Preto com Cinza RI2135/9 - 2,4L 6 Lâminas e 5 Velocidades - 800W", PictureUrl = "https://images-submarino.b2w.io/produtos/01/00/item/130849/4/130849441SZ.jpg" });
                 entities.Add(new Product { Id = 11, Name = "Beats", Price = 1299m, Description = "Headphone Beats Wireless Supra Auricular Solo 3", PictureUrl = "https://images-submarino.b2w.io/produtos/01/00/sku/36251/7/36251709_1SZ.jpg" });
                 entities.Add(new Product { Id = 12, Name = "Violão", Price = 1377.99m, Description = "Violão Eletro Acústico Aço Yamaha F310 AII", PictureUrl = "https://images-submarino.b2w.io/produtos/01/00/sku/11311/2/11311284_1SZ.jpg" });
+                entities.Add(new Product { Id = 13, Name = "Mouse", Price = 30.90m, Description = "Mouse Gamer Multilaser 2400DPI Preto e Grafite com LED – MO269 ", PictureUrl = "https://images8.kabum.com.br/produtos/fotos/96498/96498_1525437875_index_gg.jpg" });
+                entities.Add(new Product { Id = 14, Name = "Monitor", Price = 332.99m, Description = "Monitor LED 19,5 LG 20M37AA - B.AWZ", PictureUrl = "https://images-americanas.b2w.io/produtos/01/00/item/125063/0/125063021SZ.jpg" });
 
                 this.SetChached(entities);
             }
         }
         
         [HttpGet]
-        public IActionResult Get([FromQuery]string value = null)
+        public IActionResult Get([FromQuery]string value = null, [FromQuery]int page = 1, [FromQuery]int pageSize = 5)
         {
-            var entities = this
+            var query = this
                 .GetCached()
-                .Where(e => 
-                    string.IsNullOrWhiteSpace(value) 
+                .Where(e =>
+                    string.IsNullOrWhiteSpace(value)
                     || e.Name.IndexOf(value, StringComparison.OrdinalIgnoreCase) >= 0
                     || e.Description.IndexOf(value, StringComparison.OrdinalIgnoreCase) >= 0
-                )
-                .ToList();
+                );
 
-            return this.Ok(entities);
+            var totalItems = query.Count();
+
+            var totalPages = (int)Math.Ceiling((decimal)totalItems / (decimal)pageSize);
+            var startIndex = ((page - 1) * pageSize);
+            var items = query.Skip(startIndex).Take(pageSize).ToList();
+            var result = new PagedResult<Product>
+            {
+                Items = items,
+                Page = page,
+                TotalPages = totalPages
+            };
+
+            return this.Ok(result);
         }
 
         [HttpGet("{id}")]

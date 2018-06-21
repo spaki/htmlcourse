@@ -1,0 +1,18 @@
+<div class="item-product">
+    <a [routerLink]="['/product', entity.id]">
+      <div class="imagem-product">
+          <span class="imagem-product-helper"></span>
+        <img src="{{ entity.pictureUrl }}">
+      </div>
+      <div>
+          <p>
+            {{ entity.name }}
+          </p>
+        </div>
+      <div class="price-product">
+        <h2>
+          {{ entity.price | currency:'BRL' }}
+        </h2>
+      </div>
+    </a>
+</div>

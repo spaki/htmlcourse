@@ -1,0 +1,9 @@
+<div class="flex-container" *ngIf="pagedResult">
+    <app-product-card *ngFor="let product of pagedResult.items" [entity]="product"></app-product-card>
+</div>
+<div class="text-center space-div">
+    <app-pagination-item *ngFor="let item of pages" [entity]="item"></app-pagination-item>
+    {{ message }}
+    <br>
+    <br>
+</div>

@@ -13,3 +13,9 @@ Error: Cannot find module '@angular-devkit/core' - after clean install
     "@angular/cli": "^1.6.0",
     npm update
     did the trick.
+
+
+
+ng generate component bag
+
+register route, httpclient, form

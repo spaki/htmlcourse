@@ -1,0 +1,11 @@
+.pagination {
+    padding: 8px;
+    margin: 8px;
+    border-radius: 10px;
+    border: 1px solid #005792;
+}
+
+    .pagination:hover, .page-selected {
+        background-color: #005792;
+        color: #fff;
+    }

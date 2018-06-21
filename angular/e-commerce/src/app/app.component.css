@@ -1,0 +1,19 @@
+header a {
+    color: #fff;
+}
+    header a:hover {
+        color: #00bbf0;
+    }
+
+header div {
+    margin: 0 20px;
+}
+
+.code21-link {
+    color: #361537;
+    transition: 0.5s;
+}
+
+    .code21-link:hover {
+        color: #8f358b;
+    }

@@ -1,0 +1,32 @@
+.item-product {
+    margin: 10px;
+    width: 300px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    padding: 10px;
+}
+
+    .item-product:hover {
+        background-color: #eee;
+    }
+
+    .item-product h2, .item-product p{
+        text-align: left;
+    }
+
+.imagem-product {
+    height: 200px;
+}
+
+.imagem-product img {
+    vertical-align: middle;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.imagem-product-helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
