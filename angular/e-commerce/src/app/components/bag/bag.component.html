@@ -2,7 +2,20 @@
   Bag
 </h2>
 <div *ngIf="bag">
-  <app-bag-item *ngFor="let item of bag.items" [item]="item" (itemRemoved)="itemRemoved($event)"></app-bag-item>
+  <div>
+    <app-bag-item *ngFor="let item of bag.items" [item]="item" (itemRemoved)="itemRemoved($event)"></app-bag-item>
+  </div>
+  <div class="div-payment" *ngIf="paymentMethods">
+    <div class="div-payment-item">
+      Choose a Payment Method:
+      <select [(ngModel)]="paymentMethodId">
+        <option *ngFor="let item of paymentMethods" [value]="item.id">{{ item.name }}</option> 
+      </select> 
+    </div>
+    <div class="div-payment-item">
+      <button (click)="checkout()">Checkout</button>
+    </div>
+  </div>
 </div>
 <p *ngIf="message" class="text-center">
   {{ message }}

@@ -1,3 +1,5 @@
-<p>
-  user works!
-</p>
+<h2>User info</h2>
+<h4>{{ user.email }}</h4>
+<hr>
+<h3>Orders</h3>
+<app-user-order *ngFor="let item of orders" [entity]="item" ></app-user-order>

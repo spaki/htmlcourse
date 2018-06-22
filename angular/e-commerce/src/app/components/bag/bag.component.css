@@ -1,0 +1,14 @@
+select {
+    width: 200px;
+}
+
+.div-payment {
+    display: flex;
+    justify-content: left;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.div-payment-item {
+    margin: 10px;
+}

@@ -7,6 +7,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductComponent } from './components/product/product.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { UserComponent } from './components/user/user.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 export const routes: Routes = [
   { path: '', component: ProductListComponent, pathMatch: 'full' },
@@ -17,6 +18,7 @@ export const routes: Routes = [
   { path: 'user/login', component: LoginComponent },
   { path: 'user/new', component: NewUserComponent },
   { path: 'bag', component: BagComponent },
+  { path: 'checkout', component: CheckoutComponent },
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '/404' }
 ];

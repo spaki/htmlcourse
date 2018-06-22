@@ -33,6 +33,7 @@ namespace mail.Controllers
 
             if (original == null)
             {
+                entity.Id = Guid.NewGuid();
                 entity.Date = DateTime.UtcNow;
                 entities.Add(entity);
                 this.SetChached(entities);

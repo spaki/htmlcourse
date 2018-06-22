@@ -14,11 +14,29 @@ namespace mail.Controllers
         {
         }
         
+        [HttpGet("{userMail}/history")]
+        public IActionResult GetHistory(string userMail)
+        {
+            var entities = this.GetCached();
+            var result = entities.Where(e => e.UserMail == userMail).ToList();
+
+            return this.Ok(result);
+        }
+
+        [HttpGet("{userMail}/id/{id}")]
+        public IActionResult GetById(string userMail, Guid id)
+        {
+            var entities = this.GetCached();
+            var result = entities.FirstOrDefault(e => e.UserMail == userMail && e.Id == id);
+
+            return this.Ok(result);
+        }
+
         [HttpGet("{userMail}")]
         public IActionResult Get(string userMail)
         {
             var entities = this.GetCached();
-            var result = entities.FirstOrDefault(e => e.UserMail == userMail);
+            var result = entities.FirstOrDefault(e => e.UserMail == userMail && e.IsActive);
 
             return this.Ok(result);
         }

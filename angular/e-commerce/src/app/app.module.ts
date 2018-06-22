@@ -27,6 +27,8 @@ import { PaginationItemComponent } from './components/pagination-item/pagination
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { UserBarComponent } from './components/user-bar/user-bar.component';
 import { BagItemComponent } from './components/bag-item/bag-item.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { UserOrderComponent } from './components/user-order/user-order.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { BagItemComponent } from './components/bag-item/bag-item.component';
     PaginationItemComponent,
     SearchBarComponent,
     UserBarComponent,
-    BagItemComponent
+    BagItemComponent,
+    CheckoutComponent,
+    UserOrderComponent
   ],
   imports: [
     BrowserModule,

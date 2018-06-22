@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 export class BagComponent implements OnInit {
   user: User;
   paymentMethods: PaymentMethod[];
-  paymentMethod: PaymentMethod;
+  paymentMethodId: number;
   bag: Bag;
   message: string;
 
@@ -42,7 +42,10 @@ export class BagComponent implements OnInit {
       this.message = null;
 
       this.paymentMethodService.GetAll().subscribe(
-        result => this.paymentMethods = result,
+        result => { 
+          this.paymentMethods = result;
+          this.paymentMethodId = this.paymentMethods[0].id;
+        },
         error => console.log(error)
       );
 
@@ -67,10 +70,17 @@ export class BagComponent implements OnInit {
     var order = <Order> { 
       userMail: this.user.email, 
       bagId: this.bag.id, 
-      paymentMethodId: this.paymentMethod.id 
+      paymentMethodId: this.paymentMethodId 
     };
 
     this.orderService.Checkout(order).subscribe(
+      result => this.clearBag(),
+      error => console.log(error)
+    );
+  }
+
+  clearBag() {
+    this.bagService.Clear(this.user.email).subscribe(
       result => this.router.navigate(['/checkout']),
       error => console.log(error)
     );

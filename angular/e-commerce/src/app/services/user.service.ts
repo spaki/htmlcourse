@@ -25,7 +25,7 @@ export class UserService {
 
   SaveInStorage(user: User) {
     localStorage.setItem(this.storageKey, JSON.stringify(user));
-    this.userSaved.emit(true);
+    this.Refresh();
   }
 
   GetFromStorage(): User {
@@ -36,5 +36,9 @@ export class UserService {
 
     var result = JSON.parse(json);
     return result;
+  }
+
+  Refresh(){
+    this.userSaved.emit(true);
   }
 }

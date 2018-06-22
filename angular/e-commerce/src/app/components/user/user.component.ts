@@ -10,10 +10,17 @@ import { Order } from '../../models/Order';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  user: User;
+  orders: Order[];
 
   constructor(private userService: UserService, private orderService: OrderService) { }
 
   ngOnInit() {
+    this.user = this.userService.GetFromStorage();
+    this.orderService.GetByUser(this.user.email).subscribe(
+      result => this.orders = result,
+      error => console.log(error)
+    );
   }
 
 }

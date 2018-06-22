@@ -16,6 +16,18 @@ export class BagService {
     return result;
   }
 
+  GetById(userMail: string, id: string): Observable<Bag> {
+    let endpoint = this.helper.GetEndpoint('api/Bag/' + encodeURIComponent(userMail) + "/id/" + encodeURIComponent(id));
+    var result = this.http.get<Bag>(endpoint);
+    return result;
+  }
+
+  GetHistoryByUser(userMail: string): Observable<Bag[]> {
+    let endpoint = this.helper.GetEndpoint('api/Bag/' + encodeURIComponent(userMail) + "/history");
+    var result = this.http.get<Bag[]>(endpoint);
+    return result;
+  }
+
   AddItem(userMail: string, item: BagItem): Observable<any> {
     let endpoint = this.helper.GetEndpoint('api/Bag/' + encodeURIComponent(userMail));
     var result = this.http.patch(endpoint, item);
