@@ -22,6 +22,12 @@ export class BagService {
     return result;
   }
 
+  RemoveItem(userMail: string, productId: number): Observable<any> {
+    let endpoint = this.helper.GetEndpoint('api/Bag/' + encodeURIComponent(userMail) + "/removeItem/" + encodeURIComponent(productId.toString()));
+    var result = this.http.patch(endpoint, null);
+    return result;
+  }
+
   Clear(userMail: string): Observable<any> {
     let endpoint = this.helper.GetEndpoint('api/Bag/Disable/'+ encodeURIComponent(userMail));
     var result = this.http.patch(endpoint, null);

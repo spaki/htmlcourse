@@ -3,6 +3,9 @@
     <a [routerLink]="['/bag']">
       <i class="fa fa-shopping-cart" aria-hidden="true"></i>
     </a>
+    <span *ngIf="count" class="count">
+      {{ count }}
+    </span>
     &nbsp;
     &nbsp;
   </div>

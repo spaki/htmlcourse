@@ -32,6 +32,10 @@ export class BagComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.refresh();
+  }
+
+  refresh() {
     this.user = this.userService.GetFromStorage();
 
     if(!this.helperService.IsNullOrWhiteSpaceOrEmpty(this.user)) {
@@ -46,7 +50,7 @@ export class BagComponent implements OnInit {
         result => {
           this.bag = result;
 
-          if(this.helperService.IsNullOrWhiteSpaceOrEmpty(this.bag)) 
+          if(this.helperService.IsNullOrWhiteSpaceOrEmpty(this.bag) || this.helperService.IsNullOrWhiteSpaceOrEmpty(this.bag.items)) 
             this.message = "The bag is empty!";
           else
             this.message = null;
@@ -70,5 +74,9 @@ export class BagComponent implements OnInit {
       result => this.router.navigate(['/checkout']),
       error => console.log(error)
     );
+  }
+
+  itemRemoved(event: boolean){
+    this.refresh();
   }
 }

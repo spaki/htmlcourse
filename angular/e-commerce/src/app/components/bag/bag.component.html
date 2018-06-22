@@ -2,7 +2,7 @@
   Bag
 </h2>
 <div *ngIf="bag">
-  <app-bag-item *ngFor="let item of bag.items" [item]="item"></app-bag-item>
+  <app-bag-item *ngFor="let item of bag.items" [item]="item" (itemRemoved)="itemRemoved($event)"></app-bag-item>
 </div>
 <p *ngIf="message" class="text-center">
   {{ message }}

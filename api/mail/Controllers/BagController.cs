@@ -47,6 +47,29 @@ namespace mail.Controllers
             return this.Accepted();
         }
 
+        [HttpPatch("{userMail}/removeItem/{productId}")]
+        public IActionResult PatchRemoveItem(string userMail, int productId)
+        {
+            var entities = this.GetCached();
+            var bag = entities.FirstOrDefault(e => e.UserMail == userMail && e.IsActive);
+
+            if (bag != null)
+            {
+                entities.Remove(bag);
+                var bagItem = bag.Items.FirstOrDefault(e => e.ProductId == productId);
+
+                if (bagItem != null)
+                    bag.Items.Remove(bagItem);
+
+                entities.Add(bag);
+                this.SetChached(entities);
+
+                return this.Accepted();
+            }
+
+            return this.Accepted();
+        }
+
         [HttpPatch("disable/{userMail}")]
         public IActionResult Disable(string userMail)
         {

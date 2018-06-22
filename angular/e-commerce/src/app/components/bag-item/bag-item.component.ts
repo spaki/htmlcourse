@@ -1,7 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ProductService } from '../../services/product.service';
+import { BagService } from '../../services/bag.service';
+import { UserService } from '../../services/user.service';
 import { BagItem } from '../../models/BagItem';
 import { Product } from '../../models/Product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bag-item',
@@ -10,9 +13,15 @@ import { Product } from '../../models/Product';
 })
 export class BagItemComponent implements OnInit {
   @Input() item: BagItem;
+  @Output('itemRemoved') itemRemoved: EventEmitter<boolean> = new EventEmitter<boolean>();
   product: Product;
 
-  constructor(private productService: ProductService) { }
+  constructor(
+    private productService: ProductService,
+    private bagService: BagService,
+    private userService: UserService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.productService.GetById(this.item.productId).subscribe(
@@ -23,5 +32,13 @@ export class BagItemComponent implements OnInit {
 
   getTotal(): number {
     return this.product.price * this.item.quantity;
+  }
+
+  remove() {
+    var user = this.userService.GetFromStorage();
+    this.bagService.RemoveItem(user.email, this.item.productId).subscribe(
+      result => this.itemRemoved.emit(true),
+      error => console.log(error)
+    );
   }
 }
