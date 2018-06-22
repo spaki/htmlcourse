@@ -1,3 +1,20 @@
-<p>
-  product works!
-</p>
+<div *ngIf="entity" class="div-product">
+  <h2>
+    {{ entity.name }}
+  </h2>    
+  <div class="div-image text-center">
+    <img src="{{ entity.pictureUrl }}">
+  </div>
+  <p>
+    {{ entity.description }}
+  </p>
+  <h2>
+    {{ entity.price | currency:'BRL' }}
+  </h2>
+  <p *ngIf="user" class="text-right">
+    <button (click)="buy()">Buy</button>
+  </p>
+  <p *ngIf="!user" class="text-right">
+    You must to be logged in to buy.
+  </p>
+</div>

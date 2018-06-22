@@ -19,3 +19,5 @@ Error: Cannot find module '@angular-devkit/core' - after clean install
 ng generate component bag
 
 register route, httpclient, form
+
+https://angular.io/api/common/NgIf

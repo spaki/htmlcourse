@@ -1,3 +1,21 @@
-<p>
-  login works!
-</p>
+<div class="flex-container">
+  <div class="login-form space-div">
+    <h2>Login</h2>
+    <p>
+      <label>e-mail</label>
+      <br>
+      <input type="email" [(ngModel)]="user.email">
+    </p>
+    <p>
+      <label>password</label>
+      <br>
+      <input type="password" [(ngModel)]="user.password">
+    </p>
+    <p>
+      <button (click)="login()">Login</button>
+    </p>
+    <p class="error text-center">
+      {{ message }}
+    </p>
+  </div>
+</div>

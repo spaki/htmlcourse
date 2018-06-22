@@ -1,0 +1,10 @@
+input {
+    width: 300px;
+}
+
+.login-form {
+    width: 350px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}

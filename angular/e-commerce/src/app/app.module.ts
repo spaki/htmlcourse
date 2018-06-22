@@ -25,6 +25,8 @@ import { UserComponent } from './components/user/user.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { PaginationItemComponent } from './components/pagination-item/pagination-item.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { UserBarComponent } from './components/user-bar/user-bar.component';
+import { BagItemComponent } from './components/bag-item/bag-item.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     UserComponent,
     ProductCardComponent,
     PaginationItemComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    UserBarComponent,
+    BagItemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,27 @@
+<div class="flex-container">
+  <div>
+    <a [routerLink]="['/bag']">
+      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+    </a>
+    &nbsp;
+    &nbsp;
+  </div>
+  <div *ngIf='user'>
+    <a [routerLink]="['/user']">
+      {{ user.email }}
+    </a>
+    |
+    <a href="javascript:;" (click)="logoff()" >
+      logoff
+    </a>
+  </div>
+  <div *ngIf='!user'>
+    <a [routerLink]="['/user/login']">
+      login
+    </a>
+    |
+    <a [routerLink]="['/user/new']">
+      new user
+    </a>
+  </div>
+</div>

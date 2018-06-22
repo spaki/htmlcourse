@@ -27,7 +27,7 @@ namespace mail.Controllers
             entities.Add(entity);
             this.SetChached(entities);
 
-            return this.Accepted();
+            return this.Ok(entity);
         }
 
         [HttpPost("login")]

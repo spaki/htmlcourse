@@ -1,1 +1,3 @@
 ng build --prod --bh /angular/e-commerce/dist/
+
+firebase deploy

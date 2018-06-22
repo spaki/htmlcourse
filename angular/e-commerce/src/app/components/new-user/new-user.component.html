@@ -1,3 +1,16 @@
-<p>
-  new-user works!
-</p>
+<div class="space-div">
+  <h2>New User</h2>
+  <p>
+    <label>e-mail</label>
+    <br>
+    <input type="email" [(ngModel)]="user.email">
+  </p>
+  <p>
+    <label>password</label>
+    <br>
+    <input type="password" [(ngModel)]="user.password">
+  </p>
+  <p>
+    <button (click)="create()">Create</button>
+  </p>
+</div>

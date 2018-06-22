@@ -36,7 +36,7 @@ namespace mail.Controllers
         }
         
         [HttpGet]
-        public IActionResult Get([FromQuery]string value = null, [FromQuery]int page = 1, [FromQuery]int pageSize = 5)
+        public IActionResult Get([FromQuery]string value = null, [FromQuery]int page = 1, [FromQuery]int pageSize = 6)
         {
             var query = this
                 .GetCached()

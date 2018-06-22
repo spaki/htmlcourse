@@ -44,9 +44,15 @@ footer {
 
 main {
     padding: 68px 0 48px;
-    width: 95%;
+    width: 90%;
     margin: auto;
     overflow: hidden;
+}
+
+hr {
+    border: none;
+    color: transparent;
+    border-top: 1px solid lightgrey;
 }
 
 button {
@@ -97,3 +103,26 @@ textarea {
         box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
         border-color: #66afe9;
     }
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.space-div {
+    margin: 20px;
+}
+
+.error {
+    color: darkred;
+}

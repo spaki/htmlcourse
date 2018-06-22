@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using System;
+using System.Linq;
 
 namespace mail.Controllers
 {
@@ -14,7 +15,10 @@ namespace mail.Controllers
         {
             this.CacheTimeInHours = configuration.GetValue<int>("CacheTimeInHours");
             this.Cache = cache;
-            this.CacheKey = typeof(T).Name;
+
+            var type = typeof(T);
+            var genericType = type.IsGenericType ? string.Join("_", type.GenericTypeArguments.Select(t => t.Name).ToArray()) : string.Empty;
+            this.CacheKey = $"{type.Name}_{genericType}";
         }
 
         protected T GetCached()

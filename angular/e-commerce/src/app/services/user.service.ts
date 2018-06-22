@@ -6,18 +6,33 @@ import { User } from '../models/user';
 
 @Injectable()
 export class UserService {
+  storageKey = "user-info";
 
-  constructor(private http: HttpClient, private helper: HelperService) { }
+  constructor(private http: HttpClient, private helperService: HelperService) { }
 
   Login(user: User): Observable<User> {
-    let endpoint = this.helper.GetEndpoint('api/User/login/');
+    let endpoint = this.helperService.GetEndpoint('api/User/login/');
     var result = this.http.post<User>(endpoint, user);
     return result;
   }
 
-  Create(user: User): Observable<any> {
-    let endpoint = this.helper.GetEndpoint('api/User/');
-    var result = this.http.post(endpoint, user);
+  Create(user: User): Observable<User> {
+    let endpoint = this.helperService.GetEndpoint('api/User/');
+    var result = this.http.post<User>(endpoint, user);
+    return result;
+  }
+
+  SaveInStorage(user: User) {
+    localStorage.setItem(this.storageKey, JSON.stringify(user));
+  }
+
+  GetFromStorage(): User {
+    var json = localStorage.getItem(this.storageKey);
+
+    if(this.helperService.IsNullOrWhiteSpaceOrEmpty(json))
+      return null;
+
+    var result = JSON.parse(json);
     return result;
   }
 }

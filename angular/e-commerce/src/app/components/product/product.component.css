@@ -1,0 +1,8 @@
+.div-image img{
+    max-width: 360px;
+    max-height: 280px;
+}
+
+.div-product {
+    margin: 0 80px;
+}

@@ -17,3 +17,8 @@ header div {
     .code21-link:hover {
         color: #8f358b;
     }
+
+.user-info {
+    right: 0;
+    position: fixed;
+}
