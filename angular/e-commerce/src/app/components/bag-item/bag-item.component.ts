@@ -4,7 +4,6 @@ import { BagService } from '../../services/bag.service';
 import { UserService } from '../../services/user.service';
 import { BagItem } from '../../models/BagItem';
 import { Product } from '../../models/Product';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bag-item',
@@ -19,8 +18,7 @@ export class BagItemComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private bagService: BagService,
-    private userService: UserService,
-    private router: Router
+    private userService: UserService
   ) { }
 
   ngOnInit() {
